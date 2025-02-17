@@ -1,0 +1,56 @@
+@import '../../scss/common/colors';
+
+.input-field {
+  position: relative;
+  transition: all 0.2s;
+  width: 100%;
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    position: relative;
+    background: transparent;
+    transition: all 0.2s;
+    z-index: 5;
+    border: 1px solid grey;
+    border-radius: 5px;
+
+    &::placeholder {
+      opacity: 0;
+    }
+
+    padding: 0px 10px 0px;
+
+    &:hover {
+      border: 1px solid $primary;
+    }
+
+    &:hover+label {}
+
+    &:focus+label {
+      transform: translateY(-150%);
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"] {
+    &+label {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10px;
+      transition: all 0.2s;
+      z-index: 2;
+    }
+  }
+
+  &:hover {
+    label {
+      color: rgb(29, 128, 1, 25%);
+    }
+  }
+}

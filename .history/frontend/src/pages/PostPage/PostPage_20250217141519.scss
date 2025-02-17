@@ -1,0 +1,23 @@
+.postpage {
+  padding: 100px 0 0 0;
+
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  &-wrap {
+
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    max-height: 300px;
+    border: 1px solid #056f99;
+    border-radius: 5px;
+    overflow: hidden;
+
+  }
+}

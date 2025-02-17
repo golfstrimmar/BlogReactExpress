@@ -1,0 +1,15 @@
+.post {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  img {
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,24 @@
+.createpost {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+
+  h2 {
+    margin: 30px auto 0;
+  }
+
+  &-form {
+    width: 50%;
+    margin: 30px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &- {}
+
+    &- {}
+
+    &- {}
+  }
+}

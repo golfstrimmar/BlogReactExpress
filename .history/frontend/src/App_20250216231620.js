@@ -1,0 +1,38 @@
+import "./App.css";
+import Header from "./components/Header/Header.jsx";
+import AppRouter from "./router/AppRouter";
+import { BrowserRouter as Router } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { setSocket, disconnectSocket } from "./redux/actions/socketActions";
+import { io } from "socket.io-client";
+import { setPosts, addPost } from "./redux/actions/postActions";
+// Получаем URL сервера из переменных окружения
+const serverUrl = process.env.REACT_APP_API_URL;
+function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const socket = io(serverUrl);
+    socket.on("connect", () => {
+      console.log("Connected to server with id:", socket.id);
+      dispatch(setSocket(socket));
+
+      socket.on("allPosts", (posts) => {
+        dispatch(setPosts(posts));
+      });
+     
+    });
+    return () => {
+      socket.disconnect();
+      dispatch(setSocket(null));
+    };
+  }, []);
+  return (
+    <Router>
+      <Header />
+      <AppRouter />
+    </Router>
+  );
+}
+
+export default App;

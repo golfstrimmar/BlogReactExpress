@@ -1,0 +1,9 @@
+.posts {
+  margin: 30px 0 0 0;
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

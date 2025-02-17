@@ -1,0 +1,32 @@
+@import '../../scss/common/colors';
+
+.post {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  max-height: 300px;
+  border: 1px solid #056f99;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  .positiveLikes,
+  .negativeLikes {
+    svg {
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .negativeLikes {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}

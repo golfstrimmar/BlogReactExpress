@@ -1,0 +1,33 @@
+@import '../../scss/common/colors';
+
+.postpage {
+  padding: 100px 0 0 0;
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 100vh;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .post-image {
+    min-height: 400px;
+    aspect-ratio: 1.5/1;
+    max-width: 50%;
+    height: auto;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  .post-wrap {
+    display: flex;
+    gap: 20px;
+    border-top: 1px solid $a3;
+  }
+}

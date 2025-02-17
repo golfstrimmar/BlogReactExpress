@@ -1,0 +1,25 @@
+.postpage {
+  padding: 100px 0 0 0;
+
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-height: 100vh;
+    border: 1px solid #056f99;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .post-image {
+    min-height: 400px;
+    aspect-ratio: 1.5/1;
+    max-width: 50%;
+    height: auto;
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+}

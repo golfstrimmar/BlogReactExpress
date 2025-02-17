@@ -1,0 +1,21 @@
+.modalmessage {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0);
+  transform: scale(0);
+  position: fixed;
+
+  &.run {
+    transform: scale(1);
+  }
+
+  &-inner {
+
+
+    &-message {}
+
+    &- {}
+
+    &- {}
+  }
+}
