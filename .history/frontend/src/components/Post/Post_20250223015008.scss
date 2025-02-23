@@ -1,0 +1,154 @@
+@import '../../scss/common/colors';
+
+.post {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+  border: 1px solid #056f99;
+  min-height: 300px;
+  border-radius: 5px;
+  overflow: hidden;
+
+  &-image {
+    cursor: pointer;
+    transition: all .2s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &-inner {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 5px;
+  }
+
+  &-wrap {
+    margin: auto 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .positiveLikes,
+  .negativeLikes {
+    margin: 0 5px 0 0;
+
+
+    &:hover {
+      svg {
+        transition: all .2s;
+        box-shadow: 0 0 5px $success;
+      }
+    }
+
+    svg {
+      cursor: pointer;
+      width: 25px;
+      height: 25px;
+      padding: 3px;
+      border-radius: 100%;
+    }
+  }
+
+  .negativeLikes {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &-actions {
+    display: flex;
+    gap: 10px;
+  }
+
+  &-edit {
+    display: grid;
+    place-items: center;
+    width: 15px;
+    height: 15px;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      fill: $a2;
+    }
+  }
+
+  &-comments {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &-comment {
+    border: 1px solid $a2;
+    border-radius: 3px;
+    padding: 2px;
+
+    span {
+      font-size: 12px;
+    }
+
+    p {
+      color: $deep-blue;
+    }
+  }
+
+  &-addComment {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 18px;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-delete {
+    display: grid;
+    place-items: center;
+    width: 15px;
+    height: 15px;
+    transition: all .2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .post {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    border: 1px solid #056f99;
+    min-height: 300px;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+}

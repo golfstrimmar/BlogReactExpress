@@ -1,0 +1,43 @@
+@import '../../scss/common/colors';
+
+.burger {
+  border: 1px solid red;
+
+  &-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    width: 20px;
+    height: 18px;
+
+
+    &:hover * {
+      background-color: $hov;
+    }
+  }
+
+  &-line,
+  &-top,
+  &-bottom {
+    width: 100%;
+    height: 2px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all .2s;
+
+  }
+
+  &-top.run {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  &-bottom.run {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  &-line.run {
+    opacity: 0;
+  }
+}
