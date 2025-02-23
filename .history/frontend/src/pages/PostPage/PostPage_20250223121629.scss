@@ -1,0 +1,84 @@
+@import '../../scss/common/colors';
+
+.postpage {
+  padding: 100px 0 50px 0;
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .post-inner {
+    width: 100%;
+  }
+
+  .post-image {
+    min-height: 400px;
+    aspect-ratio: 1.5/1;
+    max-width: 50%;
+    height: auto;
+
+
+    &:hover {
+      transform: scale(1);
+    }
+  }
+
+  .post-wrap {
+    display: flex;
+    gap: 20px;
+    padding: 5px 0 0 0;
+    border-top: 1px solid $a3;
+  }
+
+  .modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3000;
+    background: #343a40;
+    top: 0;
+    overflow: scroll;
+    transition: all .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-content {
+      width: 90vw;
+      height: 90vh;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .postpage {
+    padding: 100px 0;
+  }
+
+  .postpage .post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-height: 200vh;
+    border: none;
+    border-radius: 0;
+    overflow: hidden;
+
+
+    &-image {
+      min-height: 300px;
+      max-width: 100%;
+
+      &:hover {
+        transform: scale(1);
+      }
+    }
+  }
+}
