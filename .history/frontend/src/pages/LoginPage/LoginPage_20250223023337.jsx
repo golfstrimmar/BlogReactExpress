@@ -6,7 +6,11 @@ import ButtonSuccessWave from "../../components/ButtonSuccessWave/ButtonSuccessW
 import { useSelector, useDispatch } from "react-redux";
 import "./LoginPage.scss";
 import { setUser } from "../../redux/actions/authActions";
-import { GoogleLogin } from "@react-oauth/google";
+import {
+  GoogleOAuthProvider,
+  GoogleLogin,
+  useGoogleOneTapLogin,
+} from "@react-oauth/google";
 
 const LoginPage = () => {
   const navigate = useNavigate();
