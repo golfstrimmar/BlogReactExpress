@@ -37,6 +37,7 @@
     margin: auto 0 0 0;
     display: flex;
     flex-direction: column;
+    gap: 5px;
   }
 
   .positiveLikes,
@@ -165,3 +166,39 @@
     }
   }
 }
+
+
+
+
+{
+    "_id": {
+      "$oid": "673ad5c5911dbe9cf06c4336"
+    }
+
+    ,
+    "title": "Hiking Northgate Peaks Trail On Kolob Terrace in Zion National Park",
+    "text": "Want to get off the beaten path and visit areas of Zion National Park less traveled? This is how you do it! Northgate Peaks Tra",
+    "tags": [ "trip"
+
+    ],
+    "viewsCount": 0,
+    "user": {
+      "$oid": "673a0785689ae65165d9d9a4"
+    }
+
+    ,
+    "imageUrl": "https://res.cloudinary.com/dke0nudcz/image/upload/v1732138058/rnvw3smvf4mroxpme16u.jpg",
+    "createdAt": {
+      "$date": "2024-11-18T05:51:01.743Z"
+    }
+
+    ,
+    "updatedAt": {
+      "$date": "2024-11-20T22:20:40.446Z"
+    }
+
+    ,
+    "__v": 0,
+    "negativeLikes": 1,
+    "positiveLikes": 3
+  }
