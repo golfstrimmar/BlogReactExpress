@@ -275,7 +275,7 @@ const CreatePost: React.FC = () => {
               </div>
             )}
           </div>
-
+          
           <ButtonSuccessWave
             text={"Create Post"}
             onClick={handleSubmit}

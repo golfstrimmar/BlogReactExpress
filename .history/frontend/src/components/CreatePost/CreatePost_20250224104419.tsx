@@ -275,7 +275,14 @@ const CreatePost: React.FC = () => {
               </div>
             )}
           </div>
-
+          {/* <button
+            // text={"Create Post"}
+            onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+              handleSubmit(e);
+            }}
+          >
+            Create Post
+          </button> */}
           <ButtonSuccessWave
             text={"Create Post"}
             onClick={handleSubmit}

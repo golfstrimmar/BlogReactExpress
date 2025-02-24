@@ -6,33 +6,33 @@ import ButtonSuccessWave from "../../components/ButtonSuccessWave/ButtonSuccessW
 import ModalMessage from "../../components/ModalMessage/ModalMessage";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+// =====================
+interface SocketData {
+  // comment: Comment;
+  // post: Post;
+  // message: string;
+  error?: string; // Опциональное поле для ошибок
+}
+interface Errors {
+  password: "";
+}
 const SetPassword = () => {
-  const [password, setPassword] = useState("");
+  const { email } = useParams();
   const navigate = useNavigate();
-  const [successMessage, setSuccessMessage] = useState("");
-  const [openModalMessage, setOpenModalMessage] = useState(false);
-  const socket = useSelector((state) => state.socket.socket);
-  const [formErrors, setFormErrors] = useState({
+  const socket = useSelector((state: any) => state.socket.socket);
+  const [password, setPassword] = useState<string>("");
+  const [successMessage, setSuccessMessage] = useState<string>("");
+  const [openModalMessage, setOpenModalMessage] = useState<boolean>(false);
+  const [formErrors, setFormErrors] = useState<Errors>({
     password: "",
   });
-  const { email } = useParams();
-  const handlerVisiblePassword = () => {
-    const passwordInput = document.getElementById("passwordLogin");
-    passwordInput.type =
-      passwordInput.type === "password" ? "text" : "password";
-  };
-  const handleSetPassword = (e) => {
+
+  // ---------------
+  const handleSetPassword = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validateForm = () => {
       let isValid = true;
-      let errors = { email: "", password: "" };
-      if (!email) {
-        errors.email = "Email is required";
-        isValid = false;
-      } else if (!/\S+@\S+\.\S+/.test(email)) {
-        errors.email = "Email is not valid";
-        isValid = false;
-      }
+      let errors = { password: "" };
       if (!password) {
         errors.password = "Password is required";
         isValid = false;
@@ -65,6 +65,18 @@ const SetPassword = () => {
       }
     });
   };
+  // ---------------
+  const handlerVisiblePassword = (): void => {
+    const passwordInput = document.getElementById(
+      "passwordLogin"
+    ) as HTMLInputElement;
+    if (passwordInput) {
+      passwordInput.type =
+        passwordInput.type === "password" ? "text" : "password";
+    }
+  };
+
+  // ---------------
   return (
     <div className="setpassword registration">
       <ModalMessage message={successMessage} open={openModalMessage} />
@@ -75,14 +87,16 @@ const SetPassword = () => {
       <form>
         <div className="input-password">
           <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            id="passwordLogin"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-          <Eye onClick={() => handlerVisiblePassword()} />
+          <div className="input-area">
+            <input
+              type="password"
+              id="passwordLogin"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+            <Eye onClick={() => handlerVisiblePassword()} />
+          </div>
         </div>
         {formErrors && (
           <div className="formErrors">
@@ -90,7 +104,6 @@ const SetPassword = () => {
           </div>
         )}
         <ButtonSuccessWave
-          type="submit"
           onClick={(e) => {
             handleSetPassword(e);
           }}
